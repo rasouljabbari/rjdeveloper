@@ -32,7 +32,7 @@ function Header(props) {
                 <ul className={'pr-4 md:pl-14'}>
                     <li className={'lg:mb-5'}>
                         <span className={'text-stone-400 text-sm mb-1 uppercase'}>Email</span>
-                        <p className={'text-white text-md mb-4 lg:mb-2'}>rjdeveloper17@gmail.com</p>
+                        <p className={'text-white text-md mb-4 lg:mb-2'}>rasoul@rjdeveloper.ir</p>
                     </li>
                     <li>
                         <span className={'text-stone-400 text-sm mb-1 uppercase'}>phone</span>
