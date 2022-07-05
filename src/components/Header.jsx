@@ -12,15 +12,18 @@ function Header(props) {
                 </div>
                 <div className="sm:ml-8">
                     <h1 className={'text-white text-3xl mb-2'}>Rasoul Jabbari</h1>
-                    <h3 className={'text-stone-400 text-lg mb-2'}>Web Developer</h3>
+                    <h3 className={'text-stone-400 text-lg mb-2 hover:text-white hover:cursor-default'}>Web Developer</h3>
                     <div className="flex items-center">
                         <div className="flex items-center">
                             <a href={'https://www.instagram.com/accounts/login/?next=/rjdeveloper.ir/'}
+                               rel="noreferrer"
                                target={'_blank'}>
-                                <span className="icon-instagram text-stone-400 text-xl pr-3"/>
+                                <span className="icon-instagram hover:text-pink-500 text-stone-400 text-xl pr-3"/>
                             </a>
-                            <a href={'https://wa.me/+989106878810?text=Hello Rasoul !'} target={'_blank'}>
-                                <span className="icon-whatsapp text-stone-400 text-xl pr-3"/>
+                            <a href={'https://wa.me/+989106878810?text=Hello Rasoul !'}
+                               rel="noreferrer"
+                               target={'_blank'}>
+                                <span className="icon-whatsapp hover:text-green-500 text-stone-400 text-xl pr-3"/>
                             </a>
                         </div>
                     </div>
