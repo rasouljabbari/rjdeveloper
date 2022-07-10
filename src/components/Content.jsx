@@ -75,8 +75,8 @@ function Content() {
                 {/*    </a>*/}
                 {/*</li>*/}
             </ul>
-            <div className="relative flex flex-col min-w-0 w-fit w-3/4 lg:w-5/6 break-words bg-gray-900 mb-6 shadow-lg bg-gray-900 p-4 md:p-8 rounded-2xl shadow-md shadow-gray-900">
-                <div className="px-4 py-5 flex-auto">
+            <div className="relative flex flex-col min-w-0 w-fit w-3/4 lg:w-5/6 break-words bg-gray-900 mb-6 shadow-lg bg-gray-900 p-3 md:p-8 rounded-2xl shadow-md shadow-gray-900">
+                <div className="px-2 md:px-4 py-5 flex-auto">
                     <div className="tab-content tab-space">
                         <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                             <AboutMe/>

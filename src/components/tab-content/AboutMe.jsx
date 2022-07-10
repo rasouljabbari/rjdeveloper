@@ -14,13 +14,13 @@ function AboutMe() {
 
             <h2 className={"text-white text-2xl font-bold mb-6"}>What I&apos;m Doing</h2>
 
-            <div className="w-full border-2 border-gray-700 rounded-2xl p-8">
+            <div className="w-full border-2 border-gray-700 rounded-2xl p-4 md:p-8">
                 <div className="flex flex-col items-center">
                     <span className="icon-code text-cyan-500 text-4xl pb-3"/>
-                    <span className={"text-lg"}>
-                        <strong className={"text-white text-xl mb-4 md:mb-3"}>Front End Developer</strong>
+                    <span className={"text-lg mb-4 md:mb-3"}>
+                        <strong className={"text-white text-lg md:text-xl"}>Front End Developer</strong>
                     </span>
-                    <p className={"text-lg text-gray-400 leading:6 md:leading-10 mb-3"}>High-quality development of sites at the professional level.</p>
+                    <p className={"text-md md:text-lg text-gray-400 leading:6 md:leading-10 mb-3"}>High-quality development of sites at the professional level.</p>
                 </div>
             </div>
         </>
