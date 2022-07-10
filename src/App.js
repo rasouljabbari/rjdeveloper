@@ -1,18 +1,16 @@
+import React from "react"
 import "./App.css"
 import Header from "./components/Header"
 import Bg from "./assets/images/bg-darker.svg"
+import Content from "./components/Content"
 
 function App() {
     return (
-
-        // eslint-disable-next-line react/react-in-jsx-scope
-        <div style={{backgroundImage: `url(${Bg})`}} className="bg-cover flex flex-col items-center justify-center min-h-screen relative">
-            {/* eslint-disable-next-line react/react-in-jsx-scope */}
+        <div style={{backgroundImage: `url(${Bg})`}} className="py-8 bg-cover flex flex-col items-center justify-center min-h-screen relative">
             <div className="container w-full">
-                {/* eslint-disable-next-line react/react-in-jsx-scope */}
                 <Header/>
-                {/* eslint-disable-next-line react/react-in-jsx-scope */}
-                <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+                <main className="m-4 mt-4 md:mt-8">
+                    <Content/>
                 </main>
             </div>
         </div>

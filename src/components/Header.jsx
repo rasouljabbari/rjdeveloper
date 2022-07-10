@@ -6,7 +6,7 @@ function Header() {
         <div
             className={"bg-gray-900 p-8 rounded-2xl relative grid grid-cols-1 lg:grid-cols-2 gap-4 m-4 shadow-md shadow-gray-900"}>
             <div className="flex flex-wrap items-start relative pr-3 mb-6 lg:mb-0 lg:border-r border-gray-600">
-                <div className="rounded-2x mx-auto sm:mx-0 mb-4 sm:mb-0 -mt-16">
+                <div className="rounded-2x ml-0 mr-auto sm:mx-0 mb-4 sm:mb-0 -mt-16">
                     <img src={Rasoul} width={162} height={162} className="rounded-3xl" alt={"rasoul jabbari"}/>
                 </div>
                 <div className="sm:ml-8">
@@ -46,7 +46,7 @@ function Header() {
                     </li>
                     <li>
                         <span className={"text-stone-400 text-sm mb-1 uppercase"}>LOCATION</span>
-                        <p className={"text-white text-md mb-4 lg:mb-2"}>Tabriz, Firoz alley</p>
+                        <p className={"text-white text-md mb-4 lg:mb-2"}>Tabriz</p>
                     </li>
                 </ul>
 
