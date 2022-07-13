@@ -55,62 +55,62 @@ function Resume() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 pt-4">
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-html5-plain text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>HTML5</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-css3-plain text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>CSS3</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-bootstrap-plain text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Bootstrap</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-tailwindcss-plain text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Tailwind</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-sass-original text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Sass</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-javascript-plain text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Javascript</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-jquery-plain text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Jquery</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-npm-original-wordmark text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Npm</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-react-original text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>React</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-redux-original text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Redux</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-nextjs-line text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Next Js</span>
                 </div>
 
-                <div className="flex flex-col mb-5 p-5 bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
+                <div className="flex flex-col mb-5 p-5 bg-teal-200 sm:bg-teal-300 dv-skill-card items-center rounded-xl w-full sm:w-3/4 pointer-default">
                     <i className="devicon-jest-plain text-4xl"></i>
                     <span className={"text-sm md:text-md font-bold"}>Jest</span>
                 </div>
