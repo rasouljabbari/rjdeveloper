@@ -86,7 +86,7 @@ function Contact() {
             <h2 className={"text-2xl text-white font-bold mb-6"}>Contact Form</h2>
 
             <form onSubmit={formHandler}>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
                     <div className={"flex flex-col pb-9 relative"}>
                         <input type="text" name="full_name" id="full_name"
                             className={"w-auto outline-0 p-3 rounded-2xl bg-gray-800 text-slate-200 mb-1 border-2" + (errors?.full_name ? " border-rose-500" : "border-slate-200")}
