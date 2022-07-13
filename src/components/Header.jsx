@@ -1,5 +1,5 @@
 import React from "react"
-import Rasoul from "../assets/images/rasoul.jpeg"
+import Rasoul from "../assets/images/rasouljabbari.jpeg"
 
 function Header() {
     return (
