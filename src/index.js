@@ -1,6 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import "./assets/icomoon/style.css"
+import "./assets/styles/devicon.min.css"
 import "./assets/styles/globals.css"
 import App from "./App"
 
