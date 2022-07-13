@@ -15,6 +15,11 @@
     color: #fff;
 }
 
+.swal2-popup{
+    max-width: 22em !important;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .dv-resume-item:before {
         left: 1rem;
