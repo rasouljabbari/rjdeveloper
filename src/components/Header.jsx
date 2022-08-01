@@ -11,8 +11,8 @@ function Header() {
                 </div>
                 <div className="sm:ml-8">
                     <h1 className={"text-white text-3xl mb-2"}>Rasoul Jabbari</h1>
-                    <h3 className={"text-stone-400 text-lg mb-2 hover:text-white hover:cursor-default"}>Web
-                        Developer</h3>
+                    <p className={"text-stone-400 text-lg mb-2 hover:text-white hover:cursor-default"}>Web
+                        Developer</p>
                     <div className="flex items-center">
                         <div className="flex items-center">
                             <a href={"https://www.instagram.com/accounts/login/?next=/rjdeveloper.ir/"} rel="noreferrer" target={"_blank"}>
