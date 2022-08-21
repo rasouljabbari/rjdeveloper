@@ -1,6 +1,6 @@
 import React from "react"
 import Rasoul from "../assets/images/rasouljabbari.jpeg"
-
+import Resume from "../assets/cv/RasoulJabbari-cv.pdf"
 function Header() {
     return (
         <div
@@ -24,7 +24,7 @@ function Header() {
                         </div>
                     </div>
 
-                    <a href="../../public/RjdeveloperCV.pdf" download className={"flex justify-center items-center px-2 py-2 rounded-lg text-white bg-gradient-to-l from-cyan-500 to-blue-500 hover:bg-gradient-to-r"}>
+                    <a href={Resume} download className={"flex justify-center items-center px-2 py-2 rounded-lg text-white bg-gradient-to-l from-cyan-500 to-blue-500 hover:bg-gradient-to-r"}>
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         <span className={"pl-4"}>Download CV</span>
                     </a>
