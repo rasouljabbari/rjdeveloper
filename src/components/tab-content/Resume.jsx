@@ -29,9 +29,9 @@ function Resume() {
             </div>
 
             <div className="flex flex-col mb-5 pl-12 relative">
-                <h3 className={"text-white text-lg md:text-xl mb-2 dv-resume-item font-bold"}>Senior React Js Developer</h3>
+                <h3 className={"text-white text-lg md:text-xl mb-2 dv-resume-item font-bold"}>React Js Developer</h3>
                 <h5 className={"text-white mb-2 dv-resume-item font-bold"}>Aral Studio - Freelance</h5>
-                <span className={"text-slate-400 mb-2 text-sm"}>Jan 2021 - August 2022</span>
+                <span className={"text-slate-400 mb-2 text-sm"}>Jan 2021 - Present</span>
                 <span className={"text-slate-400 mb-2 text-sm"}>Istanbul, Turkey</span>
                 <p className={"text-slate-300 text-md text-justify hover:text-gray-200 mb-2"}>
                     Developed and maintained React Js web applications for the company&apos;s clients, including bug fixes, enhancements, and new features.

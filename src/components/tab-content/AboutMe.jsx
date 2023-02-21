@@ -5,7 +5,7 @@ function AboutMe() {
         <>
             <h1 className={"text-white text-2xl md:text-3xl font-bold mb-8 border-b-4 border-teal-300 w-fit rounded-lg px-2 pb-2"}>About Me</h1>
             <p className={"text-md md:text-lg text-gray-400 leading-8 md:leading-10 mb-3 text-justify hover:text-gray-200"}>
-                I&apos;m Rasoul Jabbari. <strong>Senior Web Developer</strong> with over 3 years of
+                I&apos;m Rasoul Jabbari. <strong>Front-End Developer</strong> with over 3 years of
                 experience specializing in front end development. Experienced with all stages of the
                 development cycle for dynamic web projects.Having an in-depth knowledge including
                 advanced JavaScript, <b>React</b>, <b>Next</b>, JQuery, SASS, JSON, AJAX, CSS3, HTML5.
