@@ -1,9 +1,9 @@
 import React from "react"
 
-function Admin() {
+function Index() {
     return (
         <div></div>
     )
 }
 
-export default Admin
+export default Index
