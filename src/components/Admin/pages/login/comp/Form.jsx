@@ -1,6 +1,7 @@
 import React from 'react'
 import Input from './Input'
 import {useNavigate} from "react-router";
+import {submitClass} from "../../../../stateList";
 
 function Form({inputs, setInputs}) {
     const navigate = useNavigate()
@@ -10,7 +11,6 @@ function Form({inputs, setInputs}) {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log(inputs)
         navigate('/admin/dashboard')
     }
 
@@ -44,9 +44,7 @@ function Form({inputs, setInputs}) {
                         />
                         <button
                             type="submit"
-                            className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4
-                focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center
-                dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                            className={submitClass}
                         >
                             Sign in
                         </button>

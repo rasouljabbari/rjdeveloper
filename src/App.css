@@ -25,3 +25,62 @@
     left: 1rem;
   }
 }
+
+.dv-dark-input .select__control {
+  border: none;
+  height: 100%;
+  box-shadow: none;
+  outline: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dv-dark-input .select__control,
+  .rmdp-input,
+  .rmdp-month-picker,
+  .rmdp-year-picker {
+    --tw-bg-opacity: 1;
+    background-color: rgb(30 41 59 / var(--tw-bg-opacity)) !important;
+  }
+
+  .dv-dark-input .select__menu,
+  .rmdp-ep-shadow:after,
+  .rmdp-wrapper {
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 65 85 / var(--tw-bg-opacity)) !important;
+  }
+
+  .dv-dark-input .select__control .css-1dimb5e-singleValue,
+  .dv-dark-input .select__control .select__indicator,
+  .rmdp-input,
+  .rmdp-header-values span,
+  .select__input-container {
+    --tw-text-opacity: 1;
+    color: rgb(254 243 199 / var(--tw-text-opacity)) !important;
+  }
+
+  .rmdp-day span {
+    --tw-text-opacity: 1;
+    color: #f0f0f0 !important;
+  }
+
+  .rmdp-day span.highlight-red {
+    --tw-text-opacity: 1;
+    color: #cc0303 !important;
+  }
+
+  .dv-dark-input .select__menu .select__option {
+    color: #fff;
+  }
+
+  .dv-dark-input .select__menu .select__option:hover {
+    color: #1e99dc;
+  }
+
+  .dv-dark-input .select__control:hover {
+    background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  }
+
+  .select__multi-value{
+    background-color: hsl(182deg 75% 52%) !important;
+  }
+}

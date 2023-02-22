@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {NavLink} from "react-router-dom";
 
-function Tabs() {
+function Nav() {
 
     const PAGES = ['profile', 'about', 'resume', 'contact']
 
@@ -29,4 +29,4 @@ function Tabs() {
     );
 }
 
-export default memo(Tabs);
+export default memo(Nav);

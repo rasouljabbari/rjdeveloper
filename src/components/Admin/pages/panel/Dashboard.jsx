@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from "./comps/Tabs";
+import Tabs from "./Nav";
 import {Outlet} from "react-router";
 
 function Dashboard() {
