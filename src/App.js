@@ -1,19 +1,16 @@
 import React from "react"
 import "./App.css"
-import Header from "./components/Header"
-import Bg from "./assets/images/bg-darker.svg"
-import Content from "./components/Content"
+import {Route, Routes} from "react-router"
+import User from "./components/user"
+import Admin from "./components/admin"
 
 function App() {
     return (
-        <div style={{backgroundImage: `url(${Bg})`}} className="py-8 bg-cover flex flex-col items-center justify-center min-h-screen relative">
-            <div className="container w-full">
-                <Header/>
-                <main className="m-4 mt-4 md:mt-8">
-                    <Content/>
-                </main>
-            </div>
-        </div>
+        <Routes>
+            <Route path="/" element={<User />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/admin" element={<Admin />} />
+        </Routes>
     )
 }
 

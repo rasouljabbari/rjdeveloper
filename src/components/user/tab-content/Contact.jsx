@@ -4,7 +4,7 @@ import {
     maxLengthHandler,
     dataSubmitRegex,
     emptySubmitErrorHandling
-} from "../../assets/scripts/errorHandling"
+} from "../../../assets/scripts/errorHandling"
 import Swal from "sweetalert2"
 
 function Contact() {

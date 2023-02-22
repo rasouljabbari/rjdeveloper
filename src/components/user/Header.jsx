@@ -1,6 +1,6 @@
 import React from "react"
-import Rasoul from "../assets/images/rasouljabbari.jpeg"
-import Resume from "../assets/cv/RasoulJabbari-cv.pdf"
+import Rasoul from "../../assets/images/rasouljabbari.jpeg"
+import Resume from "../../assets/cv/RasoulJabbari-cv.pdf"
 function Header() {
     return (
         <div

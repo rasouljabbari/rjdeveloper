@@ -27,7 +27,7 @@ function Content() {
                             setOpenTab(1)
                         }}
                         data-toggle="tab"
-                        href="#link1"
+                        href="src/components#link1"
                         role="tablist"
                     >
                         <span className="icon-user-tie text-2xl lg:text-4xl lg:pb-3"/>
@@ -47,7 +47,7 @@ function Content() {
                             setOpenTab(2)
                         }}
                         data-toggle="tab"
-                        href="#link2"
+                        href="src/components#link2"
                         role="tablist"
                     >
                         <span className="icon-profile text-2xl lg:text-4xl lg:pb-3"/>
@@ -67,7 +67,7 @@ function Content() {
                             setOpenTab(3)
                         }}
                         data-toggle="tab"
-                        href="#link3"
+                        href="src/components#link3"
                         role="tablist"
                     >
                         <span className="icon-phone text-2xl lg:text-4xl lg:pb-3"/>
@@ -93,7 +93,7 @@ function Content() {
                                 setOpenTab(1)
                             }}
                             data-toggle="tab"
-                            href="#link1"
+                            href="src/components#link1"
                             role="tablist"
                         >
                             <span className="icon-user-tie text-2xl lg:text-4xl lg:pb-3"/>
@@ -113,7 +113,7 @@ function Content() {
                                 setOpenTab(2)
                             }}
                             data-toggle="tab"
-                            href="#link2"
+                            href="src/components#link2"
                             role="tablist"
                         >
                             <span className="icon-profile text-2xl lg:text-4xl lg:pb-3"/>
@@ -133,7 +133,7 @@ function Content() {
                                 setOpenTab(3)
                             }}
                             data-toggle="tab"
-                            href="#link3"
+                            href="src/components#link3"
                             role="tablist"
                         >
                             <span className="icon-phone text-2xl lg:text-4xl lg:pb-3"/>
