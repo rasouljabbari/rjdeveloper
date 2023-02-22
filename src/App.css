@@ -1,27 +1,27 @@
 .dv-resume-item:before {
-    content: '';
-    background-color: #5eead4;
-    box-shadow: 0 0 0 0.1875rem rgb(94 234 212 / 25%);
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    left: 1.4rem;
-    height: 0.625rem;
-    width: 0.625rem;
+  content: '';
+  background-color: #5eead4;
+  box-shadow: 0 0 0 0.1875rem rgb(94 234 212 / 25%);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 1.4rem;
+  height: 0.625rem;
+  width: 0.625rem;
 }
 
 ::selection {
-    background: #14d5b7;
-    color: #fff;
+  background: #14d5b7;
+  color: #fff;
 }
 
-.swal2-popup{
-    max-width: 22em !important;
-    width: 100%;
+.swal2-popup {
+  max-width: 22em !important;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
-    .dv-resume-item:before {
-        left: 1rem;
-    }
+  .dv-resume-item:before {
+    left: 1rem;
+  }
 }
