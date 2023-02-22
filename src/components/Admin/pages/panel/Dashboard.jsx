@@ -4,10 +4,12 @@ import {Outlet} from "react-router";
 
 function Dashboard() {
     return (
-        <>
-            <Tabs />
-            <Outlet/>
-        </>
+        <div className="container mx-auto">
+            <Tabs/>
+            <div className="py-12">
+                <Outlet/>
+            </div>
+        </div>
     );
 }
 
