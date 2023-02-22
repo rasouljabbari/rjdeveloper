@@ -1,20 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Tabs from "./comps/Tabs";
-import TabContent from "./comps/TabContent";
+import {Outlet} from "react-router";
 
 function Dashboard() {
-    const [tabId, setTabId] = useState('profile')
-
-    const tabHandler = (elem) => {
-        setTabId(elem)
-    }
-
     return (
         <>
-            <Tabs tabHandler={tabHandler}/>
-            <div id="myTabContent">
-                <TabContent tabId={tabId}/>
-            </div>
+            <Tabs />
+            <Outlet/>
         </>
     );
 }
