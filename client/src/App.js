@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './App.css'
 import {Route, Routes} from 'react-router'
 import User from './components/User'
@@ -11,6 +11,18 @@ import Resume from "./components/Admin/pages/panel/tab-content/Resume";
 import About from "./components/Admin/pages/panel/tab-content/About";
 
 function App() {
+
+    useEffect(() => {
+        callAPI()
+    }, [])
+
+    const callAPI = () => {
+        fetch("http://localhost:9000/api/v1/auth")
+            .then(res => res.text())
+            .then(res => console.log(res))
+            .catch(error => console.log(error))
+    }
+
     return (
         <Routes>
             <Route path="/" element={<User/>}/>

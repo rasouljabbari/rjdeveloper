@@ -8,26 +8,21 @@ const {SECRET_TOKEN_KEY} = require('../utils/config')
 const router = Router()
 
 router.post('/register', async (request, response) => {
-    const {email} = request.body
+    const {mobile} = request.body
 
     // check if user already exist
     // Validate if user exist in our database
-    const userDB = await User.findOne({$or: [{email}]})
+    const userDB = await User.findOne({$or: [{mobile}]})
 
     if (userDB) {
-        response.status(409).send({
-            status: 409,
-            error: {
-                message: "User Already Exist. Please Login"
-            }
-        })
+        response.status(409).json( "User Already Exist. Please Login")
     } else {
 
         //Encrypt user password
         const password = hashPassword(request.body.password)
 
         // Create user in our database
-        const user = await User.create({email, password})
+        const user = await User.create({mobile, password})
 
         response.status(201).json({
             status: 201,
@@ -36,31 +31,20 @@ router.post('/register', async (request, response) => {
         })
     }
 })
-
 router.post('/login', async (request, response) => {
-    const {email, password} = request.body
+    const {mobile, password} = request.body
 
-    if (!email || !password) return response.status(400).send({
-        status: 400,
-        error: {
-            message: 'all fields is required'
-        }
-    })
+    if (!mobile || !password) return response.status(400).json('all fields is required')
 
-    const user = await User.findOne({email})
-    if (!user) return response.status(404).send({
-        status: 404,
-        error: {
-            message: "user not found!"
-        }
-    })
+    const user = await User.findOne({mobile})
+    if (!user) return response.status(404).json("user not found!")
 
     const isValidPassword = comparePassword(password, user.password)
     if (isValidPassword) {
 
         // Create token
         const token = jwt.sign(
-            {user_id: user._id, email},
+            {user_id: user._id, mobile},
             SECRET_TOKEN_KEY,
             {
                 expiresIn: "24h",
@@ -73,18 +57,13 @@ router.post('/login', async (request, response) => {
             message : "You are logged in successfully!",
             user: {
                 id: user._id,
-                email,
+                mobile,
                 createdAt: user.createdAt
             },
             token: user.token
         })
     } else {
-        response.status(400).send({
-            status: 400,
-            error: {
-                message: 'password is incorrect'
-            }
-        })
+        response.status(400).json("password is incorrect")
     }
 })
 

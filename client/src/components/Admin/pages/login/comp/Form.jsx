@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Input from './Input'
 import {useNavigate} from "react-router";
 import {submitClass} from "../../../../stateList";
+import axios from "axios";
+import {MAIN_URL} from "../../../../../assets/scripts/GeneralVariables";
 
 function Form({inputs, setInputs}) {
+    const [error , setError] = useState('')
     const navigate = useNavigate()
     const inputHandler = ({target: {name, value}}) => {
         setInputs({...inputs, [name]: value})
@@ -11,7 +14,17 @@ function Form({inputs, setInputs}) {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        navigate('/admin/dashboard')
+        axios.post(`${MAIN_URL}/auth/login`, inputs)
+            .then(function (response) {
+                if(response.status === 200) {
+                    const {token} = response.data
+                    localStorage.setItem('Token',token)
+                    navigate('/admin/dashboard')
+                }
+            })
+            .catch(function (error) {
+                setError(error?.response?.data)
+            });
     }
 
     return (
@@ -42,6 +55,9 @@ function Form({inputs, setInputs}) {
                             value={inputs?.password}
                             inputHandler={inputHandler}
                         />
+                        {
+                            error && <p className={'text-rose-500 text-center text-md'}>{error}</p>
+                        }
                         <button
                             type="submit"
                             className={submitClass}
