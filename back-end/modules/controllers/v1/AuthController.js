@@ -35,7 +35,7 @@ module.exports = new class AuthController extends Controller {
                 profile: uri + req.files['profile'][0].path.replace(/\\/g, '/'),
                 cv: uri + req.files['cv'][0].path.replace(/\\/g, '/')
             });
-            return res.status(201).json(responseHandler('ثبت نام با موفقیت انجام شد', newUser))
+            return res.status(201).json(responseHandler('ثبت نام با موفقیت انجام شد', new UserTransform().transform(newUser)))
 
         } catch (error) {
             this.serverErrorHandler(error, req, res)
