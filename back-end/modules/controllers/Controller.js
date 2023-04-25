@@ -28,7 +28,17 @@ module.exports = class Controller {
         this.model = {Skills, Experience, About, Education, User}
     }
 
-    //Show Errors For Validation Rules
+    // success message
+    successResponse(req, res, label, data) {
+        const statusCode = res.statusCode || 200;
+        return res.status(statusCode).json(
+            {
+                status: statusCode,
+                [label]: data
+            });
+    }
+
+//Show Errors For Validation Rules
     showValidationErrors(req, res) {
         let body = req.body
         if (req.file) {
