@@ -10,15 +10,12 @@ const responseHandler = (message, data) => {
 
 module.exports = new class AuthController extends Controller {
     async register(req, res) {
-
         try {
-            const {name, type, email, password} = req.body;
+            const {email} = req.body;
             const uri = config.NODE_ENV === 'dev' ? `http://localhost:${config.port}/` : config.site_uri
-
             // Validation and Show errors
-            if(this.showValidationErrors(req, res)) 
-            return;
-
+            if (this.showValidationErrors(req, res))
+                return;
             // Check if user with this email already exists
             const existingUser = await this.model.User.findOne({email});
             if (existingUser) {
@@ -32,14 +29,11 @@ module.exports = new class AuthController extends Controller {
                     success: false
                 })
             }
-
             // Create new user
             const newUser = await this.model.User.create({
-                name,
-                email,
-                password,
-                type,
-                profile : uri + req.file.path.replace(/\\/g, '/')
+                ...req.body,
+                profile: uri + req.files['profile'][0].path.replace(/\\/g, '/'),
+                cv: uri + req.files['cv'][0].path.replace(/\\/g, '/')
             });
             return res.status(201).json(responseHandler('ثبت نام با موفقیت انجام شد', newUser))
 
@@ -51,13 +45,13 @@ module.exports = new class AuthController extends Controller {
 
     async login(req, res) {
         try {
-            const {email, password} = req.body;
+            const {mobile, password} = req.body;
 
             // Validation and Show errors
-            if(this.showValidationErrors(req, res)) 
-            return;
+            if (this.showValidationErrors(req, res))
+                return;
 
-            const existingUser = await this.model.User.findOne({email});
+            const existingUser = await this.model.User.findOne({mobile});
 
             if (!existingUser) {
                 return res.status(422).json({

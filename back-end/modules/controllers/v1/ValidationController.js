@@ -1,55 +1,124 @@
 const {check} = require('express-validator');
 
+const mobileRegex = /^(\+98|0)?9\d{9}$/;
+
 module.exports = {
     register: [
-        check('name')
+        check('profile')
+            .notEmpty().withMessage('آپلود عکس پروفایل الزامی است')
+            .isIn(["PNG", "JPEG", "WEBP"]).withMessage('فرمت فایل بارگزاری شده باید یکی از فرمت های png,jpeg,jpg,webp باشد'),
+
+        check('full_name')
             .notEmpty().trim().escape().withMessage('وارد کردن نام و نام خانوادگی اجباری است.')
             .isLength({min: 5}).withMessage('نام و نام خانوادگی حداقل می بایست 5 کاراکتر باشد.'),
 
-        check('profile')
-            .notEmpty().withMessage('آپلود عکس پروفایل الزامی است')
-            .isIn([ "PNG", "JPEG", "WEBP" ]).withMessage('فرمت فایل بارگزاری شده باید یکی از فرمت های png,jpeg,jpg,webp باشد'),
+        check('job_title')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن عنوان شغلی اجباری است.'),
+
+        check('instagram')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن لینک های اینستاگرام اجباری است.'),
+
+        check('whatsapp')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن شماره واتساپ اجباری است.')
+            .matches(mobileRegex)
+            .withMessage('فرمت شماره واتساپ وارد شده معتبر نیست'),
+
+        check('cv')
+            .notEmpty().withMessage('آپلود فایل رزومه الزامی است'),
 
         check('email')
             .notEmpty().trim().escape()
             .withMessage('وارد کردن ایمیل اجباری است.')
             .isEmail().withMessage('فرمت ایمیل معتبر نیست'),
 
+        check('mobile')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن شماره موبایل اجباری است.')
+            .matches(mobileRegex)
+            .withMessage('فرمت شماره موبایل وارد شده معتبر نیست'),
+
+        check('birthday')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن تاریخ تولد اجباری است.'),
+
+        check('location')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن آدرس محل زندگی اجباری است.'),
+
         check('password')
             .notEmpty().trim().escape().withMessage('وارد کردن رمز اجباری است.')
             .isLength({min: 8}).withMessage('حداقل تعداد رمز 8 رقم می باشد'),
     ],
-    storeCourse: [
-        check('title')
+
+    storeAbout: [
+        check('description')
             .notEmpty().trim().escape()
-            .withMessage('وارد کردن عنوان اجباری است.').isLength({min: 5})
-            .withMessage('عنوان حداقل می بایست 5 کاراکتر باشد.'),
+            .withMessage('وارد کردن توضیحات اجباری است.').isLength({min: 100})
+            .withMessage('توضیحات حداقل می بایست 100 کاراکتر باشد.'),
 
-        check('body')
+        check('job_title')
             .notEmpty().trim().escape()
-            .withMessage('وارد کردن توضیحات اجباری است.'),
+            .withMessage('وارد کردن عنوان شغلی اجباری است.'),
 
-        check('price')
-            .notEmpty().trim().escape().withMessage('وارد کردن قیمت دوره اجباری است.')
-            .isInt().withMessage('قیمت دوره باید بصورت عدد وارد شود'),
-
-        check('image')
-            .notEmpty().trim().escape().withMessage('بارگزاری عکس دوره اجباری است.'),
+        check('job_level')
+            .notEmpty().trim().escape().withMessage('وارد کردن سطح مهارت اجباری است.')
+            .isInt().withMessage('سطح مهارت باید بصورت عدد وارد شود'),
     ],
-    storeEpisode: [
+
+    storeEducation: [
         check('title')
             .notEmpty().trim().escape()
             .withMessage('وارد کردن عنوان اجباری است.'),
 
-        check('body')
+        check('year')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن سال اجباری است.'),
+
+        check('description')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن توضیحات اجباری است.'),
+    ],
+
+    storeExperience: [
+        check('title')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن عنوان شغل اجباری است.'),
+
+        check('company')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن عنوان شرکت اجباری است.'),
+
+        check('status')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن وضعیت کاری اجباری است.'),
+
+        check('year')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن سال اجباری است.'),
+
+        check('location')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن آدرس اجباری است.'),
+
+        check('description')
             .notEmpty().trim().escape()
             .withMessage('وارد کردن توضیحات اجباری است.'),
 
-        check('videoUrl')
-            .notEmpty().trim().escape().withMessage('وارد کردن آدرس ویدیو اجباری است.'),
+        check('skills')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن مهارت ها اجباری است.'),
+    ],
 
-        check('number')
-            .notEmpty().withMessage('وارد کردن شماره جلسه اجباری است.'),
+    storeSkills: [
+        check('title')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن عنوان مهارت اجباری است.'),
 
+        check('logo')
+            .notEmpty().withMessage('آپلود عکس مهارت الزامی است')
+            .isIn(["PNG", "JPEG", "WEBP"]).withMessage('فرمت فایل بارگزاری شده باید یکی از فرمت های png,jpeg,jpg,webp باشد'),
     ],
 }

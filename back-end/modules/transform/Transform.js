@@ -23,9 +23,4 @@ module.exports = class Transform {
         return 'items';
     }
 
-    withPaginate() {
-        this.withPaginateStatus = true;
-        return this;
-    }
-
 }

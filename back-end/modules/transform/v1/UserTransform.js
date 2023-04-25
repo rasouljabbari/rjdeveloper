@@ -13,8 +13,8 @@ module.exports = class UserTransform extends Transform {
     transform(item, createToken = false) {
         this.createToken = createToken
         return {
-            name: item?.name,
-            email: item?.email,
+            full_name: item?.full_name,
+            mobile: item?.mobile,
             ...this.withToken(item)
         }
     }

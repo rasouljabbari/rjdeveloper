@@ -1,7 +1,9 @@
 // Models
-const Course = require('./../models/course');
+const Skills = require('./../models/skills');
+const Experience = require('./../models/experience');
+const About = require('./../models/about');
 const User = require('./../models/user');
-const Episode = require('./../models/episode');
+const Education = require('./../models/education');
 const {validationResult} = require("express-validator");
 
 const sendErrorDev = (err, res) => {
@@ -23,13 +25,13 @@ const sendErrorProd = (err, res) => {
 
 module.exports = class Controller {
     constructor() {
-        this.model = {Course,Episode, User}
+        this.model = {Skills, Experience, About, Education, User}
     }
 
     //Show Errors For Validation Rules
     showValidationErrors(req, res) {
         let body = req.body
-        if(req.file) {
+        if (req.file) {
             body = {
                 ...req.body,
                 ...req.file,

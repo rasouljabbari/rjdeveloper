@@ -16,13 +16,16 @@ const UserSchema = new Schema({
         type: String,
         require: true
     },
-    social_media: [
-        {
-            type: String,
-            require: true,
-            unique: true
-        }
-    ],
+    instagram: {
+        type: String,
+        require: true,
+        unique: true
+    },
+    whatsapp: {
+        type: String,
+        require: true,
+        unique: true
+    },
     cv: {
         type: String,
         require: true,

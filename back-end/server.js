@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 global.config = require('./modules/config')
 const cors = require('cors');
 // connect to DB
-mongoose.connect('mongodb://127.0.0.1:27017/myDB', { useNewUrlParser: true })
+mongoose.connect('mongodb://127.0.0.1:27017/rjdeveloper', { useNewUrlParser: true })
 mongoose.Promise = global.Promise
 
 app.use(cors());

@@ -17,19 +17,24 @@ const imageStorage = multer.diskStorage({
 })
 
 const imageFilter = (req, file, cb) => {
-    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpeg' || file.mimetype === 'image/webp') {
+    console.log(file.mimetype)
+    // cv
+    if (file.fieldname === 'cv') {
+        if (file.mimetype !== 'application/pdf') {
+            return cb(new Error('Only PDFs are allowed for CVs'));
+        } else {
+            cb(null, true)
+        }
+    } else if (file.mimetype === 'image/png' || file.mimetype === 'image/jpeg' || file.mimetype === 'image/webp') {
         cb(null, true)
-    } else cb(null, false)
+    } else return cb(new Error('Only png , jpeg and webp are allowed for images'));
 }
 
 const uploadImage = multer({
     storage: imageStorage,
-    fileFilter : imageFilter,
+    fileFilter: imageFilter,
     limits: {
-        // 1024 * 1024 = 1MB
-        // 1024 * 1024 * 10 = 10MB
-
-        fileSize : 1024 * 1024 * 10
+        fileSize: 1024 * 1024 * 10 // 10MB file size limit
     }
 })
 
