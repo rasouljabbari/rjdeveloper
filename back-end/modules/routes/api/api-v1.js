@@ -15,6 +15,7 @@ const HomeController = require(`${ControllerApi}/v1/HomeController`)
 const AuthController = require(`${ControllerApi}/v1/admin/AuthController`)
 const UserController = require(`${ControllerApi}/v1/admin/UserController`)
 const AdminAboutController = require(`${ControllerApi}/v1/admin/AboutController`)
+const AdminEducationController = require(`${ControllerApi}/v1/admin/EducationController`)
 
 // User Controller
 const UserAboutController = require(`${ControllerApi}/v1/user/AboutController`)
@@ -42,6 +43,8 @@ const adminRouter = express.Router()
 
 adminRouter.get('/about-me', AdminAboutController.index.bind(AdminAboutController))
 adminRouter.post('/about-me', upload.none(), validationRules.storeAbout, AdminAboutController.store.bind(AdminAboutController))
+
+adminRouter.post('/education', upload.none(), validationRules.storeEducation, AdminEducationController.store.bind(AdminEducationController))
 
 
 router.use('/admin', apiAuth, adminRouter)

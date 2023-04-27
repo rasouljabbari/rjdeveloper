@@ -7,12 +7,17 @@ const educationSchema = new Schema({
         type: String,
         require: true
     },
-    year: {
+    description: {
         type: String,
         require: true
     },
-    description: {
-        type: String,
+    start: {
+        type: Number,
+        require: true,
+        unique: true
+    },
+    end: {
+        type: Number,
         require: true
     },
 })

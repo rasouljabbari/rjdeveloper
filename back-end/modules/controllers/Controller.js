@@ -39,16 +39,10 @@ module.exports = class Controller {
     }
 
 //Show Errors For Validation Rules
-    showValidationErrors(req, res) {
-        let body = req.body
-        if (req.file) {
-            body = {
-                ...req.body,
-                ...req.file,
-            }
-        }
+    async showValidationErrors(req, res) {
 
-        const errors = validationResult(body);
+        const errors = await validationResult(req);
+
         if (!errors.isEmpty()) {
             return res.status(400).json(
                 {

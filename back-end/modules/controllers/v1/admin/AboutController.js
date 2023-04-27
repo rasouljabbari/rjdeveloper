@@ -13,7 +13,7 @@ module.exports = new class AboutController extends Controller {
     async store(req, res) {
 
         // Validation and Show errors
-        if (this.showValidationErrors(req, res)) return
+        if (await this.showValidationErrors(req, res)) return
 
         try {
             const aboutMe = await this.model.About.findOne();

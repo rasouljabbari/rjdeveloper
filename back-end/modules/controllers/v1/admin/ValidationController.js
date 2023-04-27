@@ -65,7 +65,6 @@ module.exports = {
 
         check('job_level')
             .notEmpty().trim().escape().withMessage('وارد کردن سطح مهارت اجباری است.')
-            .isInt().withMessage('سطح مهارت باید بصورت عدد وارد شود'),
     ],
 
     storeEducation: [
@@ -73,9 +72,17 @@ module.exports = {
             .notEmpty().trim().escape()
             .withMessage('وارد کردن عنوان اجباری است.'),
 
-        check('year')
+        check('start')
             .notEmpty().trim().escape()
-            .withMessage('وارد کردن سال اجباری است.'),
+            .withMessage('وارد کردن سال شروع تحصیل اجباری است.')
+            .isInt().withMessage('سال شروع باید به صورت عدد باشد')
+            .isLength({min: 4, max: 4}).withMessage('سال شروع تحصیل باید 4 کاراکتر باشد.'),
+
+        check('end')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن سال پایان تحصیل اجباری است.')
+            .isInt().withMessage('سال پایان باید به صورت عدد باشد')
+            .isLength({min: 4, max: 4}).withMessage('سال پایان تحصیل باید 4 کاراکتر باشد.'),
 
         check('description')
             .notEmpty().trim().escape()
