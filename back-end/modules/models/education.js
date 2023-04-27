@@ -13,8 +13,7 @@ const educationSchema = new Schema({
     },
     start: {
         type: Number,
-        require: true,
-        unique: true
+        require: true
     },
     end: {
         type: Number,

@@ -44,7 +44,10 @@ const adminRouter = express.Router()
 adminRouter.get('/about-me', AdminAboutController.index.bind(AdminAboutController))
 adminRouter.post('/about-me', upload.none(), validationRules.storeAbout, AdminAboutController.store.bind(AdminAboutController))
 
+adminRouter.get('/education', AdminEducationController.list.bind(AdminEducationController))
 adminRouter.post('/education', upload.none(), validationRules.storeEducation, AdminEducationController.store.bind(AdminEducationController))
+adminRouter.put('/education/:id', upload.none(), validationRules.storeEducation, AdminEducationController.update.bind(AdminEducationController))
+adminRouter.delete('/education/:id', AdminEducationController.destroy.bind(AdminEducationController))
 
 
 router.use('/admin', apiAuth, adminRouter)
