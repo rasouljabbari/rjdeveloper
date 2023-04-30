@@ -89,6 +89,16 @@ module.exports = {
             .withMessage('وارد کردن توضیحات اجباری است.'),
     ],
 
+    storeSkills: [
+        check('title')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن عنوان مهارت اجباری است.'),
+
+        check('icon')
+            .notEmpty().trim().escape()
+            .withMessage('وارد کردن آیکون مهارت اجباری است.'),
+    ],
+
     storeExperience: [
         check('title')
             .notEmpty().trim().escape()
@@ -117,15 +127,5 @@ module.exports = {
         check('skills')
             .notEmpty().trim().escape()
             .withMessage('وارد کردن مهارت ها اجباری است.'),
-    ],
-
-    storeSkills: [
-        check('title')
-            .notEmpty().trim().escape()
-            .withMessage('وارد کردن عنوان مهارت اجباری است.'),
-
-        check('logo')
-            .notEmpty().withMessage('آپلود عکس مهارت الزامی است')
-            .isIn(["PNG", "JPEG", "WEBP"]).withMessage('فرمت فایل بارگزاری شده باید یکی از فرمت های png,jpeg,jpg,webp باشد'),
     ],
 }

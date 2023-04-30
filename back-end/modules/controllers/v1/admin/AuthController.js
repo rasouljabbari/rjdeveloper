@@ -48,7 +48,7 @@ module.exports = new class AuthController extends Controller {
             const {mobile, password} = req.body;
 
             // Validation and Show errors
-            if (this.showValidationErrors(req, res))
+            if (await this.showValidationErrors(req, res))
                 return;
 
             const existingUser = await this.model.User.findOne({mobile});

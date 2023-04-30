@@ -40,7 +40,6 @@ module.exports = class Controller {
 
 //Show Errors For Validation Rules
     async showValidationErrors(req, res) {
-        console.log(req.body)
         const errors = await validationResult(req);
 
         if (!errors.isEmpty()) {

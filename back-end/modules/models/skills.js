@@ -7,7 +7,7 @@ const skillsSchema = new Schema({
         type: String,
         require: true
     },
-    logo: {
+    icon: {
         type: String,
         require: true
     },

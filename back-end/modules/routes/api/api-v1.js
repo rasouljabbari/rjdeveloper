@@ -16,10 +16,12 @@ const AuthController = require(`${ControllerApi}/v1/admin/AuthController`)
 const UserController = require(`${ControllerApi}/v1/admin/UserController`)
 const AdminAboutController = require(`${ControllerApi}/v1/admin/AboutController`)
 const AdminEducationController = require(`${ControllerApi}/v1/admin/EducationController`)
+const AdminSkillsController = require(`${ControllerApi}/v1/admin/SkillsController`)
 
 // User Controller
 const UserAboutController = require(`${ControllerApi}/v1/user/AboutController`)
 const EducationController = require(`${ControllerApi}/v1/user/EducationController`)
+const SkillsController = require(`${ControllerApi}/v1/user/SkillsController`)
 
 const multer = require('multer');
 const upload = multer();
@@ -38,7 +40,8 @@ router.get('/user', apiAuth, UserController.index.bind(UserController))
 
 // user routes
 router.get('/about-me', UserAboutController.index.bind(UserAboutController))
-router.get('/education', EducationController.list.bind(EducationController))
+router.get('/educations', EducationController.list.bind(EducationController))
+router.get('/skills', SkillsController.list.bind(SkillsController))
 
 const adminRouter = express.Router()
 
@@ -50,8 +53,19 @@ adminRouter.post('/education', upload.none(), validationRules.storeEducation, Ad
 adminRouter.put('/education/:id', upload.none(), validationRules.storeEducation, AdminEducationController.update.bind(AdminEducationController))
 adminRouter.delete('/education/:id', AdminEducationController.destroy.bind(AdminEducationController))
 
+adminRouter.post('/skills', upload.none(), validationRules.storeSkills, AdminSkillsController.store.bind(AdminSkillsController))
+adminRouter.get('/skills', AdminSkillsController.list.bind(AdminSkillsController))
+adminRouter.put('/skills/:id', upload.none(), validationRules.storeSkills, AdminSkillsController.update.bind(AdminSkillsController))
+adminRouter.delete('/skills/:id', AdminSkillsController.destroy.bind(AdminSkillsController))
 
 router.use('/admin', apiAuth, adminRouter)
+
+router.all('*', (req, res) => {
+    return res.status(404).json({
+        status: 404,
+        error: `Request URL ${req.path} not found!`,
+    })
+})
 
 
 module.exports = router

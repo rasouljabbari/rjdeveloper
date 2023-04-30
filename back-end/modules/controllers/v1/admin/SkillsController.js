@@ -1,17 +1,6 @@
 const Controller = require(`${config.path.controller}/Controller`)
 
-module.exports = new class EducationController extends Controller {
-
-    async list(req, res) {
-        try {
-            const educations = await this.model.Education.find({})
-            if (educations) {
-                return this.successResponse(req, res, 'educations', educations)
-            }
-        } catch (error) {
-            this.serverErrorHandler(error, req, res)
-        }
-    }
+module.exports = new class SkillsController extends Controller {
 
     async store(req, res) {
         try {
@@ -22,22 +11,34 @@ module.exports = new class EducationController extends Controller {
                 return;
 
             // Check if user with this email already exists
-            const existingEducation = await this.model.Education.findOne({title});
-            if (existingEducation) {
+            const existingSkills = await this.model.Skills.findOne({title});
+            if (existingSkills) {
                 return res.status(409).json({
                     errors: [
                         {
                             'field': 'title',
-                            'message': 'عنوان سطح تحصیلاتی نمی تواند تکراری باشد',
+                            'message': 'عنوان مهارت نمی تواند تکراری باشد',
                         }
                     ],
                     success: false
                 })
             }
-            // Create new user
-            const newEducation = await this.model.Education.create(req.body);
-            return this.successResponse(req, res, 'education', newEducation)
 
+            // Create new skill
+            const newSkills = await this.model.Skills.create(req.body);
+            return this.successResponse(req, res, 'skill', newSkills)
+
+        } catch (error) {
+            this.serverErrorHandler(error, req, res)
+        }
+    }
+
+    async list(req, res) {
+        try {
+            const skills = await this.model.Skills.find({})
+            if (skills) {
+                return this.successResponse(req, res, 'skills', skills)
+            }
         } catch (error) {
             this.serverErrorHandler(error, req, res)
         }
@@ -50,14 +51,14 @@ module.exports = new class EducationController extends Controller {
 
         try {
 
-            const education = await this.model.Education.findOne({_id: id})
+            const skill = await this.model.Skills.findOne({_id: id})
 
-            if (education) {
+            if (skill) {
 
                 await Object.keys(updateData).forEach(key => {
                     // check if req.body key is null jump to next index
                     if (updateData[key]) {
-                        education[key] = updateData[key];
+                        skill[key] = updateData[key];
                     }
                 });
 
@@ -65,12 +66,12 @@ module.exports = new class EducationController extends Controller {
                 if (await this.showValidationErrors(req, res))
                     return;
 
-                await education.save();
+                await skill.save();
 
-                return this.successResponse(req, res, 'education', education)
+                return this.successResponse(req, res, 'skill', skill)
             } else {
                 return res.status(404).json({
-                    error: 'سطح تحصیلات مورد نظر وجود ندارد',
+                    error: 'مهارت مورد نظر وجود ندارد',
                     success: false
                 })
             }
@@ -83,12 +84,12 @@ module.exports = new class EducationController extends Controller {
 
         const id = req.params.id;
         try {
-            const deletedEducation = await this.model.Education.findByIdAndRemove(id)
-            if (deletedEducation) {
-                return this.successResponse(req, res, 'education', 'با موفقیت حذف شد')
+            const deletedSkill = await this.model.Skills.findByIdAndRemove(id)
+            if (deletedSkill) {
+                return this.successResponse(req, res, 'skill', 'با موفقیت حذف شد')
             } else {
                 return res.status(404).json({
-                    error: 'دوره تحصیلی مورد نظر وجود ندارد',
+                    error: 'مهارت مورد نظر وجود ندارد',
                     success: false
                 })
             }
