@@ -19,6 +19,7 @@ const AdminEducationController = require(`${ControllerApi}/v1/admin/EducationCon
 
 // User Controller
 const UserAboutController = require(`${ControllerApi}/v1/user/AboutController`)
+const EducationController = require(`${ControllerApi}/v1/user/EducationController`)
 
 const multer = require('multer');
 const upload = multer();
@@ -37,7 +38,7 @@ router.get('/user', apiAuth, UserController.index.bind(UserController))
 
 // user routes
 router.get('/about-me', UserAboutController.index.bind(UserAboutController))
-
+router.get('/education', EducationController.list.bind(EducationController))
 
 const adminRouter = express.Router()
 
