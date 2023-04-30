@@ -23,6 +23,7 @@ const AdminExperienceController = require(`${ControllerApi}/v1/admin/ExperienceC
 const UserAboutController = require(`${ControllerApi}/v1/user/AboutController`)
 const EducationController = require(`${ControllerApi}/v1/user/EducationController`)
 const SkillsController = require(`${ControllerApi}/v1/user/SkillsController`)
+const ExperienceController = require(`${ControllerApi}/v1/user/ExperienceController`)
 
 const multer = require('multer');
 const upload = multer();
@@ -43,6 +44,7 @@ router.get('/user', apiAuth, UserController.index.bind(UserController))
 router.get('/about-me', UserAboutController.index.bind(UserAboutController))
 router.get('/educations', EducationController.list.bind(EducationController))
 router.get('/skills', SkillsController.list.bind(SkillsController))
+router.get('/experience', ExperienceController.list.bind(ExperienceController))
 
 const adminRouter = express.Router()
 
