@@ -15,9 +15,13 @@ const experienceSchema = new Schema({
         type: String,
         require: true
     },
-    year: {
-        type: String,
-        require: true
+    start_date: {
+        type: Date,
+        require: true,
+    },
+    end_date: {
+        type: Date,
+        allowNull: true
     },
     location: {
         type: String,
@@ -27,12 +31,7 @@ const experienceSchema = new Schema({
         type: String,
         require: true
     },
-    skills: [
-        {
-            type: String,
-            require: true
-        }
-    ],
+    skills: [String],
 })
 
 experienceSchema.plugin(timestamps)

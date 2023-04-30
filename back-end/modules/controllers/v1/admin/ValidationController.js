@@ -1,6 +1,8 @@
 const {check} = require('express-validator');
 
 const mobileRegex = /^(\+98|0)?9\d{9}$/;
+const dateRegex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
+
 
 module.exports = {
     register: [
@@ -109,12 +111,19 @@ module.exports = {
             .withMessage('وارد کردن عنوان شرکت اجباری است.'),
 
         check('status')
-            .notEmpty().trim().escape()
-            .withMessage('وارد کردن وضعیت کاری اجباری است.'),
+            .notEmpty().trim().escape().withMessage('وارد کردن وضعیت کاری اجباری است.')
+            .isIn(['Full-time', 'Freelance']).withMessage('وضعیت وارد شده معتبر نیست'),
 
-        check('year')
+        check('start_date')
             .notEmpty().trim().escape()
-            .withMessage('وارد کردن سال اجباری است.'),
+            .withMessage('وارد کردن تاریخ شروع همکاری اجباری است.')
+            .matches(dateRegex)
+            .withMessage('Date field is invalid'),
+            // .matches(dateRegex)
+            // .withMessage('تاریخ شروع همکاری معتبر نیست'),
+
+        // check('end_date')
+        //     .isEmpty(),
 
         check('location')
             .notEmpty().trim().escape()

@@ -17,6 +17,7 @@ const UserController = require(`${ControllerApi}/v1/admin/UserController`)
 const AdminAboutController = require(`${ControllerApi}/v1/admin/AboutController`)
 const AdminEducationController = require(`${ControllerApi}/v1/admin/EducationController`)
 const AdminSkillsController = require(`${ControllerApi}/v1/admin/SkillsController`)
+const AdminExperienceController = require(`${ControllerApi}/v1/admin/ExperienceController`)
 
 // User Controller
 const UserAboutController = require(`${ControllerApi}/v1/user/AboutController`)
@@ -57,6 +58,11 @@ adminRouter.post('/skills', upload.none(), validationRules.storeSkills, AdminSki
 adminRouter.get('/skills', AdminSkillsController.list.bind(AdminSkillsController))
 adminRouter.put('/skills/:id', upload.none(), validationRules.storeSkills, AdminSkillsController.update.bind(AdminSkillsController))
 adminRouter.delete('/skills/:id', AdminSkillsController.destroy.bind(AdminSkillsController))
+
+adminRouter.post('/experience', upload.none(), validationRules.storeExperience, AdminExperienceController.store.bind(AdminExperienceController))
+adminRouter.get('/experience', AdminExperienceController.list.bind(AdminExperienceController))
+adminRouter.put('/experience/:id', upload.none(), validationRules.storeExperience, AdminExperienceController.update.bind(AdminExperienceController))
+adminRouter.delete('/experience/:id', AdminExperienceController.destroy.bind(AdminExperienceController))
 
 router.use('/admin', apiAuth, adminRouter)
 
