@@ -13,7 +13,6 @@ const apiAuth = require("../../middlewares/apiAuth");
 // Controllers
 const HomeController = require(`${ControllerApi}/v1/HomeController`)
 const AuthController = require(`${ControllerApi}/v1/admin/AuthController`)
-const UserController = require(`${ControllerApi}/v1/admin/UserController`)
 const AdminAboutController = require(`${ControllerApi}/v1/admin/AboutController`)
 const AdminEducationController = require(`${ControllerApi}/v1/admin/EducationController`)
 const AdminSkillsController = require(`${ControllerApi}/v1/admin/SkillsController`)
@@ -37,7 +36,6 @@ router.post('/register', validationRules.register, uploadImage.fields([{name: 'c
 }]), AuthController.register.bind(AuthController))
 
 router.post('/login', upload.none(), AuthController.login.bind(AuthController))
-router.get('/user', apiAuth, UserController.index.bind(UserController))
 
 
 // user routes
