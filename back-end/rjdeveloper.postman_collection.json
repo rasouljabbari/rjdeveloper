@@ -1,0 +1,732 @@
+{
+	"info": {
+		"_postman_id": "0a8aa83c-fd37-4663-a7a4-44adcbec1f1c",
+		"name": "rjdeveloper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14411002"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profile",
+											"type": "file",
+											"src": "/D:/Rasoul/1.jpeg"
+										},
+										{
+											"key": "full_name",
+											"value": "Rasoul jabbari",
+											"type": "text"
+										},
+										{
+											"key": "job_title",
+											"value": "Front end Developer",
+											"type": "text"
+										},
+										{
+											"key": "instagram",
+											"value": "rjdeveloper.ir",
+											"type": "text"
+										},
+										{
+											"key": "whatsapp",
+											"value": "09106878810",
+											"type": "text"
+										},
+										{
+											"key": "cv",
+											"type": "file",
+											"src": "/C:/Users/RG Front-End/Desktop/Rasoul Jabbari.pdf"
+										},
+										{
+											"key": "email",
+											"value": "rjdeveloper17@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "mobile",
+											"value": "09106878810",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "1998/12/08",
+											"type": "text"
+										},
+										{
+											"key": "location",
+											"value": "Iran, Tabriz",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/register",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "mobile",
+											"value": "09106878810",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "about",
+					"item": [
+						{
+							"name": "about-me",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/admin/about-me",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"about-me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "description",
+											"value": "I'm Rasoul Jabbari. Front-End Developer with over 3 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced JavaScript, React, Next, JQuery, SASS, JSON, AJAX, CSS3, HTML5. Strong background in management and leadership.",
+											"type": "text"
+										},
+										{
+											"key": "job_title",
+											"value": "Mern Developer",
+											"type": "text"
+										},
+										{
+											"key": "job_level",
+											"value": "High-quality development of sites at the professional level.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/about-me",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"about-me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "description",
+											"value": "I'm Rasoul Jabbari. Front-End Developer with over 3 years of experience specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects.Having an in-depth knowledge including advanced JavaScript, React, Next, JQuery, SASS, JSON, AJAX, CSS3, HTML5. Strong background in management and leadership.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "job_title",
+											"value": "Back End Developer",
+											"type": "text"
+										},
+										{
+											"key": "job_level",
+											"value": "High-quality development of sites at the professional level.",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/about-me",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"about-me"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "education",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Madani Azarbaijan9",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Bachelor of Computer Engineering: I earned a degree from this university institution and have successfully passed all the courses with an A grade.",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "2018",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "2022",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/education",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"education"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "title test",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "description test",
+											"type": "text"
+										},
+										{
+											"key": "start",
+											"value": "2010",
+											"type": "text"
+										},
+										{
+											"key": "end",
+											"value": "2020",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/education/644a47d5de1f00f3ccd55830",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"education",
+										"644a47d5de1f00f3ccd55830"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/admin/education/644a552e09a0e44a5293f9d4",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"education",
+										"644a552e09a0e44a5293f9d4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "educations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/admin/education",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"education"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "experience",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Madani Azarbaijan9",
+											"type": "text"
+										},
+										{
+											"key": "company",
+											"value": "Aral Studio",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Freelance",
+											"description": "Freelance , Full-time",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2010-12-20",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2018-12-08",
+											"type": "text"
+										},
+										{
+											"key": "location",
+											"value": "Istanbul, Turkey",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Developed and maintained React Js web applications for the company's clients, including bug fixes, enhancements, and new features. Collaborated with other developers to ensure code quality standards are met and followed best practices in software development.",
+											"type": "text"
+										},
+										{
+											"key": "skills[0]",
+											"value": "React js",
+											"type": "text"
+										},
+										{
+											"key": "skills[1]",
+											"value": "JavaScript",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/experience",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"experience"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "Full-time",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/experience/644e5f1ab6a1a9b44bb57f9a",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"experience",
+										"644e5f1ab6a1a9b44bb57f9a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/admin/experience/644e5faa9d141c787379bad2",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"experience",
+										"644e5faa9d141c787379bad2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "educations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/admin/experience",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"experience"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "skills",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Bootstrap",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"value": "devicon-bootstrap-plain",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/skills",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"skills"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Bootstrap",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"value": "devicon-bootstrap-plain",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/skills/644e4fdc2eb6ac57d5c0cf2c",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"skills",
+										"644e4fdc2eb6ac57d5c0cf2c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "remove",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/admin/skills/644e52087d2792a75c2d29ea",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"skills",
+										"644e52087d2792a75c2d29ea"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/admin/skills",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"skills"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "about-me",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/about-me",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"about-me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "educations",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/educations",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"educations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "skills",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/skills",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "educations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/experience",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"experience"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQ0N2I2YTJjOGIzYzljYTUxNTdlM2Y0IiwiaWF0IjoxNjgyODUzMDAxLCJleHAiOjE2ODMxMTIyMDF9.tYfxgj1QpMTObI3dC-W-tksxYcrupnESWbQkpJqFmMU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
