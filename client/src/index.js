@@ -4,13 +4,19 @@ import './assets/icomoon/style.css'
 import './assets/styles/devicon.min.css'
 import './assets/styles/globals.css'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
+import {QueryClient, QueryClientProvider} from "react-query";
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
+
+const queryClient = new QueryClient()
+
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+        <QueryClientProvider client={queryClient}>
+            <BrowserRouter>
+                <App/>
+            </BrowserRouter>
+        </QueryClientProvider>
+    </React.StrictMode>
 )
