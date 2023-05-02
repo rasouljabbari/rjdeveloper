@@ -139,9 +139,6 @@ module.exports = {
     ],
 
     storeContact: [
-        check('title')
-            .notEmpty().trim().escape()
-            .withMessage('Entering the message title is mandatory.'),
 
         check('full_name')
             .notEmpty().trim().escape().withMessage('Entering the first and last name is mandatory.')

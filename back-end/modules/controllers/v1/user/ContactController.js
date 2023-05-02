@@ -12,7 +12,7 @@ module.exports = new class ContactController extends Controller {
             // Create new user
             const contact = await this.model.Contact.create(req.body);
             if (contact) {
-                return this.successResponse(req, res, 'contact', 'successfully send message')
+                return this.successResponse(req, res, 'message', 'successfully message sent')
             }
 
         } catch (error) {
