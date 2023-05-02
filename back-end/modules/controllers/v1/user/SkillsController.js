@@ -3,9 +3,9 @@ const UserSkillsTransform = require(`${config.path.transform}/v1/UserSkillsTrans
 module.exports = new class SkillsController extends Controller {
     async list(req, res) {
         try {
-            const educations = await this.model.Skills.find({})
-            if (educations) {
-                return this.successResponse(req, res, 'skills', new UserSkillsTransform().transform(educations))
+            const skills = await this.model.Skills.find({})
+            if (skills) {
+                return this.successResponse(req, res, 'skills', new UserSkillsTransform().transform(skills))
             }
         } catch (error) {
             this.serverErrorHandler(error, req, res)
