@@ -137,4 +137,29 @@ module.exports = {
             .notEmpty().trim().escape()
             .withMessage('وارد کردن مهارت ها اجباری است.'),
     ],
+
+    storeContact: [
+        check('title')
+            .notEmpty().trim().escape()
+            .withMessage('Entering the message title is mandatory.'),
+
+        check('full_name')
+            .notEmpty().trim().escape().withMessage('Entering the first and last name is mandatory.')
+            .isLength({min: 5}).withMessage('The first and last name must be at least 5 characters long'),
+
+        check('email')
+            .notEmpty().trim().escape()
+            .withMessage('Entering email is mandatory.')
+            .isEmail().withMessage('The email format is not valid.'),
+
+        check('mobile')
+            .notEmpty().trim().escape()
+            .withMessage('Entering the mobile number is mandatory.')
+            .matches(mobileRegex)
+            .withMessage('The entered mobile number format is not valid.'),
+
+        check('message')
+            .notEmpty().trim().escape()
+            .withMessage('Entering the text of the message is mandatory.'),
+    ],
 }

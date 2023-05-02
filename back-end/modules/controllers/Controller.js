@@ -4,6 +4,7 @@ const Experience = require('./../models/experience');
 const About = require('./../models/about');
 const User = require('./../models/user');
 const Education = require('./../models/education');
+const Contact = require('./../models/contact');
 const {validationResult} = require("express-validator");
 
 const sendErrorDev = (err, res) => {
@@ -25,7 +26,7 @@ const sendErrorProd = (err, res) => {
 
 module.exports = class Controller {
     constructor() {
-        this.model = {Skills, Experience, About, Education, User}
+        this.model = {Skills, Experience, About, Education, User, Contact}
     }
 
     // success message

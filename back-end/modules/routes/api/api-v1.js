@@ -17,6 +17,7 @@ const AdminAboutController = require(`${ControllerApi}/v1/admin/AboutController`
 const AdminEducationController = require(`${ControllerApi}/v1/admin/EducationController`)
 const AdminSkillsController = require(`${ControllerApi}/v1/admin/SkillsController`)
 const AdminExperienceController = require(`${ControllerApi}/v1/admin/ExperienceController`)
+const AdminContactController = require(`${ControllerApi}/v1/admin/ContactController`)
 
 // User Controller
 const UserAboutController = require(`${ControllerApi}/v1/user/AboutController`)
@@ -24,6 +25,7 @@ const EducationController = require(`${ControllerApi}/v1/user/EducationControlle
 const SkillsController = require(`${ControllerApi}/v1/user/SkillsController`)
 const ExperienceController = require(`${ControllerApi}/v1/user/ExperienceController`)
 const ResumeController = require(`${ControllerApi}/v1/user/ResumeController`)
+const ContactController = require(`${ControllerApi}/v1/user/ContactController`)
 
 const multer = require('multer');
 const upload = multer();
@@ -45,9 +47,11 @@ router.get('/educations', EducationController.list.bind(EducationController))
 router.get('/skills', SkillsController.list.bind(SkillsController))
 router.get('/experience', ExperienceController.list.bind(ExperienceController))
 router.get('/resume', ResumeController.list.bind(ResumeController))
+router.post('/contact',upload.none(), validationRules.storeContact, ContactController.store.bind(ContactController))
 
 const adminRouter = express.Router()
 
+adminRouter.get('/contact', AdminContactController.list.bind(AdminContactController))
 adminRouter.get('/about-me', AdminAboutController.index.bind(AdminAboutController))
 adminRouter.post('/about-me', upload.none(), validationRules.storeAbout, AdminAboutController.store.bind(AdminAboutController))
 
